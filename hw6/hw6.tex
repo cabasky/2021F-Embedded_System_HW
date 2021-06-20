@@ -1,0 +1,62 @@
+\documentclass{article}
+\usepackage{fancyhdr}
+\usepackage{xeCJK}
+\usepackage{pifont}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{geometry}
+\geometry{left=1.5cm,right=1.5cm,top=3cm,bottom=3cm}
+\usepackage[colorlinks,linkcolor=blue]{hyperref}
+%\setmainfont{Times New Roman}  
+\setCJKmainfont{Songti SC}
+\pagestyle{fancy}
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \fancyfoot[C]{\thepage}
+    \renewcommand\headrulewidth{0pt}
+}
+\begin{document}
+    \noindent\textbf{6.12}指令中的操作数可以存放在哪些地方？\par
+    \ding{172}以立即数方式存放在指令中\par
+    \ding{173}cpu内部寄存器中\par
+    \ding{174}存储器中
+    \\[4pt]\par
+
+    \noindent\textbf{6.15}对比寄存器偏移寻址、前变址寻址和后变址寻址的异同。\par
+    相同：三者都基于寄存器偏移寻址，指令的格式类似\par
+    不同：寄存器偏移寻址是指在执行指令时，操作数地址为基地址加偏移量，指令完成后不改变基地址和地址偏移两个寄存器的值；前变址寻址是指在执行指令时，将基地址加偏移量得到的地址写回基地址寄存器，然后按照新的基地址来寻址；后变址寻址是指在执行指令时，按照基地址先寻址，完成后再将基地址加偏移量写回基地址寄存器。
+    \\[4pt]\par
+
+    \noindent\textbf{6.20}解释汇编语法“LDM \{addr_mode\} <Rn>\{!\}, <registers>”中各部分要素的含义。\par
+    \ding{172} LDM表示多寄存器加载指令\par
+    \ding{173} \{addr_mode\}为可选后缀，表示地址模式，有IA、IB、DA、DB四种模式\par
+    \ding{174} <Rn>表示选用的基地址寄存器\par
+    \ding{175} \{!\}表示是否将新修改的地址写回到基地址寄存器中\par
+    \ding{176} <registers>为载入数据的寄存器集合
+    \\[4pt]\par
+
+    \noindent\textbf{6.34}什么是符号扩展？\par
+    进行数扩展时，扩展位和符号为保持一致，保留有符号数的符号位。
+    \\[4pt]\par
+
+    \noindent\textbf{6.35}MOV指令是否可以完成从一个存储器单元到一个寄存器的数据传送？为什么？\par
+    不能。MOV只支持处理器内部的电路单元之间的数据传送，包括寄存器之间、立即数到寄存器、通用寄存器和特殊寄存器之间等。
+    \\[4pt]\par
+
+    \noindent\textbf{6.40}为什么“BL”或“BLX”指令适用于函数调用，而“B”指令不适合。\par
+    B表示无条件跳转，不带其他操作，比如保存返回地址以返回调用语句下一句等，因此单个B指令不适合函数调用；而BL和BLX则会先将返回地址压入栈中，解决了返回的问题。
+    \\[4pt]\par
+
+    \noindent\textbf{6.42}“CBZ”指令的作用与“CMP”指令组合“BEQ”指令有什么区别？\par
+    CBZ在跳转后不影响APSR，且只能单向向前跳转4-130字节的指令，只能使用R0-R7，适用于小范围循环控制；后两者会更新APSR，可以实现任意位置跳转，适用于大范围控制。
+    \\[4pt]\par
+
+    \noindent\textbf{6.43}解释饱和和溢出的区别。\par
+    饱和：数据达到可表示的最值时不再增或者减，保持在最值。加减运算有饱和的概念。\par
+    溢出：传统运算方式中，数据达到可表示最值后继续增或减，自动回到计数零点。
+    \\[4pt]\par
+
+    \noindent\textbf{Hint:}\quad View this HW github repositry at:\par
+    \quad \url{https://github.com/cabasky/2021F-Embedded_System_HW}
+    \\[4pt]\par
+\end{document}
