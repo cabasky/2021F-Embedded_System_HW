@@ -17,9 +17,9 @@
 }
 \begin{document}
     \noindent\textbf{6.12}指令中的操作数可以存放在哪些地方？\par
-    \ding{172}以立即数方式存放在指令中\par
-    \ding{173}cpu内部寄存器中\par
-    \ding{174}存储器中
+    \ding{172} 以立即数方式存放在指令中\par
+    \ding{173} cpu内部寄存器中\par
+    \ding{174} 存储器中
     \\[4pt]\par
 
     \noindent\textbf{6.15}对比寄存器偏移寻址、前变址寻址和后变址寻址的异同。\par
@@ -27,9 +27,9 @@
     不同：寄存器偏移寻址是指在执行指令时，操作数地址为基地址加偏移量，指令完成后不改变基地址和地址偏移两个寄存器的值；前变址寻址是指在执行指令时，将基地址加偏移量得到的地址写回基地址寄存器，然后按照新的基地址来寻址；后变址寻址是指在执行指令时，按照基地址先寻址，完成后再将基地址加偏移量写回基地址寄存器。
     \\[4pt]\par
 
-    \noindent\textbf{6.20}解释汇编语法“LDM \{addr_mode\} <Rn>\{!\}, <registers>”中各部分要素的含义。\par
+    \noindent\textbf{6.20}解释汇编语法“LDM \{addr\_mode\} <Rn>\{!\}, <registers>”中各部分要素的含义。\par
     \ding{172} LDM表示多寄存器加载指令\par
-    \ding{173} \{addr_mode\}为可选后缀，表示地址模式，有IA、IB、DA、DB四种模式\par
+    \ding{173} \{addr\_mode\}为可选后缀，表示地址模式，有IA、IB、DA、DB四种模式\par
     \ding{174} <Rn>表示选用的基地址寄存器\par
     \ding{175} \{!\}表示是否将新修改的地址写回到基地址寄存器中\par
     \ding{176} <registers>为载入数据的寄存器集合
